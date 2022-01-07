@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Vite App</title>
+  </head>
+  <script>
+    var i=0;
+    var images=[];
+    images[0] = "https://picsum.photos/150/200";
+    images[1] = "https://picsum.photos/300/150";
+    images[2] = "https://picsum.photos/150/50";
+    function changeImage() {
+      document.slide.src = images[i];
+      if(i < images.length - 1){
+        i++
+      }else{
+        i=0;
+      }
+
+      setTimeout("changeImage()", 3000);
+    }
+    window.onload = changeImage;
+  </script>
+  <body>
+    <div class="max-w-5xl m-auto">
+<!-- Logo and Menu -->
+      <header>
+        <div class="bg-[#252c4f] py-[13px]">
+          <a href="#">
+            <img src="https://picsum.photos/150/50" class="mx-auto" alt=""> 
+          </a>
+        </div>
+        <div class="bg-[#cc7701] flex">
+            <ul class="flex">
+              <li class="menu_list">Trang chủ</li>
+              <li class="menu_list">Tuyển sinh</li>
+              <li class="menu_list">Chương trình đào tạo</li>
+              <li class="menu_list">Góc sinh viên</li>
+              <li class="menu_list">Tuyển dụng</li>
+            </ul>
+
+            <div class="flex my-2 mx-20">
+              <form action="">
+                <input type="text"  value="" class="border-2 border-slate-900 w-100">
+                <button class=" bg-[#252c4f] ... border-2 border-slate-900 text-white hover:bg-white ... hover:text-[#252c4f]">Tìm kiếm</button>
+              </form>
+            </div>
+        </div>
+      </header>
+<!-- Slide Show       -->
+      <div>
+        <img name="slide" class="object-cover w-full h-80 w-full" alt="">  
+      </div>
+<!-- News        -->
+      <h3 class="font-semibold my-8">Tin Tức Học Tập</h3>
+      <main class="grid gap-4 grid-cols-3 grid-rows-3 gap-x-10 ">
+          <div class="news">
+            <div class="iteam">
+              <img src="https://picsum.photos/300/150" alt="">
+              <h2>
+                Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring 2018
+              </h2>
+              <p>
+                Tối ngày 16/06/2018, Cao Đẳng FPT Polytechnic Hà Nội đã tổ chức Lễ tôn ving "Ong vàng Poly",
+                tuyên dương 295 các nhân tập thể có thành tích xuất sắc trong học tập cũng như hoạt động
+              </p>
+            </div>
+          </div>
+          <div class="news">
+            <div class="iteam">
+              <img src="https://picsum.photos/300/150" alt="">
+              <h2>
+                Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring 2018
+              </h2>
+              <p>
+                Tối ngày 16/06/2018, Cao Đẳng FPT Polytechnic Hà Nội đã tổ chức Lễ tôn ving "Ong vàng Poly",
+                tuyên dương 295 các nhân tập thể có thành tích xuất sắc trong học tập cũng như hoạt động
+              </p>
+            </div>
+          </div>
+          <div class="news">
+            <div class="iteam">
+              <img src="https://picsum.photos/300/150" alt="">
+              <h2>
+                Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring 2018
+              </h2>
+              <p>
+                Tối ngày 16/06/2018, Cao Đẳng FPT Polytechnic Hà Nội đã tổ chức Lễ tôn ving "Ong vàng Poly",
+                tuyên dương 295 các nhân tập thể có thành tích xuất sắc trong học tập cũng như hoạt động
+              </p>
+            </div>
+          </div>
+          <div class="news">
+            <div class="iteam">
+              <img src="https://picsum.photos/300/150" alt="">
+              <h2>
+                Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring 2018
+              </h2>
+              <p>
+                Tối ngày 16/06/2018, Cao Đẳng FPT Polytechnic Hà Nội đã tổ chức Lễ tôn ving "Ong vàng Poly",
+                tuyên dương 295 các nhân tập thể có thành tích xuất sắc trong học tập cũng như hoạt động
+              </p>
+            </div>
+          </div>
+          <div class="news">
+            <div class="iteam">
+              <img src="https://picsum.photos/300/150" alt="">
+              <h2>
+                Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring 2018
+              </h2>
+              <p>
+                Tối ngày 16/06/2018, Cao Đẳng FPT Polytechnic Hà Nội đã tổ chức Lễ tôn ving "Ong vàng Poly",
+                tuyên dương 295 các nhân tập thể có thành tích xuất sắc trong học tập cũng như hoạt động
+              </p>
+            </div>
+          </div>
+          <div class="news">
+            <div class="iteam">
+              <img src="https://picsum.photos/300/150" alt="">
+              <h2>
+                Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring 2018
+              </h2>
+              <p>
+                Tối ngày 16/06/2018, Cao Đẳng FPT Polytechnic Hà Nội đã tổ chức Lễ tôn ving "Ong vàng Poly",
+                tuyên dương 295 các nhân tập thể có thành tích xuất sắc trong học tập cũng như hoạt động
+              </p>
+            </div>
+          </div>
+          <div class="news">
+            <div class="iteam">
+              <img src="https://picsum.photos/300/150" alt="">
+              <h2>
+                Vinh danh 295 sinh viên FPT Polytechnic học kỳ Spring 2018
+              </h2>
+              <p>
+                Tối ngày 16/06/2018, Cao Đẳng FPT Polytechnic Hà Nội đã tổ chức Lễ tôn ving "Ong vàng Poly",
+                tuyên dương 295 các nhân tập thể có thành tích xuất sắc trong học tập cũng như hoạt động
+              </p>
+            </div>
+          </div>
+      </main>
+<!-- Footer       -->
+      <footer class="bg-[#252c4f] text-white py-2 mt-8">
+        <h2 class="font-semibold text-center">Nguyễn Quý Giang</h2>
+      </footer>
+      <!-- <div id="app"></div> -->
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
