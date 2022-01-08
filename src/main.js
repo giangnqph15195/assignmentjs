@@ -1,4 +1,20 @@
-import '../style.css'
+// import '../style.css'no
+import Navigo from "navigo";
+import AboutPage from "./page/about";
+import HomePage from "./page/home";
+const router = new Navigo("/");
+const render = (conten) => {
+    document.getElementById("app").innerHTML = conten.print();
+}
+router.on({
+    "/": () => {
+        render(HomePage);
+    },
+    "/tuyensinh": () => {
+        render(AboutPage);
+    }
+});
+router.resolve();
 
 // document.querySelector('#app').innerHTML = `
 //   <h1>Hello Vite!</h1>
