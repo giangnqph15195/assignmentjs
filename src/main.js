@@ -2,7 +2,7 @@
 import Navigo from "navigo";
 import AboutPage from "./page/about";
 import HomePage from "./page/home";
-const router = new Navigo("/");
+const router = new Navigo("/", {linksSelector: "a"});
 const render = (conten) => {
     document.getElementById("app").innerHTML = conten.print();
 }
