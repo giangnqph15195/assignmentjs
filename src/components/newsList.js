@@ -1,15 +1,14 @@
 import data from "../data";
 const NewsList = {
     print() {
-        return `
-            <h3 id="app" class="font-semibold my-8">Tin Tức Học Tập</h3>
+        return /*html*/`
             <main class="grid gap-4 grid-cols-3 grid-rows-3 gap-x-10 ">
-            ${data.map((post) => `
+            ${data.map((post) => /* html */ `
                 <div class="news">
                     <div class="iteam">
-                        <img src="${post.img}" alt="">
+                        <a href="/news/${post.id}"><img src="${post.img}" alt=""></a>
                 <h2>
-                    ${post.title}
+                    <a href="/news/${post.id}">${post.title}</a>
                 </h2>
                 <p>
                     ${post.desc}
