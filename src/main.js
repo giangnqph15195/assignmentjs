@@ -1,22 +1,54 @@
 // import '../style.css'no
 import Navigo from "navigo";
+import MenuList from "./components/menuList";
 import AboutPage from "./page/about";
+import AddNews from "./page/admin/addnews";
+import AdminNews from "./page/admin/adminew";
+import Dashboard from "./page/admin/dashboard";
+import DetailNewsPage from "./page/detailpage";
+import EditNews from "./page/admin/editnews";
 import HomePage from "./page/home";
+import NewsPage from "./page/news";
+import SignIn from "./page/signin";
+import SignUp from "./page/signup";
+
 const router = new Navigo("/", {linksSelector: "a"});
-const render = (conten) => {
-    document.getElementById("app").innerHTML = conten.print();
+const render = (content) => {
+    // document.getElementById("header").innerHTML = MenuList.print();
+    document.getElementById("app").innerHTML = content;
 }
 router.on({
     "/": () => {
-        render(HomePage);
+        render(HomePage.print());
     },
     "/tuyensinh": () => {
-        render(AboutPage);
-    }
+        render(AboutPage.print());
+    },
+    "/news": () => {
+        render(NewsPage.print());
+    },
+    "/signin": () => {
+        render(SignIn.print())
+    },
+    "/signup": () => {
+        render(SignUp.print())
+    },
+    "/news/:id": ({ data }) => {
+        const { id } = data;
+        render(DetailNewsPage.print(id));
+    },
+    "/admin/dashboard": () => {
+        render(Dashboard.print())
+    },
+    "/admin/news": () => {
+        render(AdminNews.print())
+    },
+    "/admin/news/add": () => {
+        render(AddNews.print())
+    },
+    "/admin/news/:id/edit": ({ data }) => {
+        const { id } = data;
+        render(EditNews.print(id));
+    },
 });
 router.resolve();
-
-// document.querySelector('#app').innerHTML = `
-//   <h1>Hello Vite!</h1>
-//   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-// `
