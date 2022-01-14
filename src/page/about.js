@@ -1,7 +1,13 @@
+import Banner from "../components/banner";
+import MenuList from "../components/menuList";
+
 const AboutPage = {
     print() {
-        return `About Page
-            <li class="menu_list"><a href="/tuyensinh">Trang chủ</a></li>
+        return `
+        <div class="max-w-5xl m-auto">
+            ${MenuList.print()}
+            ${Banner.print()}
+        </div>    
         `;
     },
 };
