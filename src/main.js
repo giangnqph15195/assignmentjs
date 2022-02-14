@@ -23,18 +23,10 @@ router.on({
     "/news": () => render(NewsPage),
     "/signin": () => render(SignIn),
     "/signup": () => render(SignUp),
-    "/news/:id": ({ data }) => {
-        const { id } = data;
-        render(DetailNewsPage.print(id));
-    },
+    "/news/:id": (value) => render(DetailNewsPage, value.id),
     "/admin/dashboard": () => render(Dashboard),
-    "/admin/news": () => {
-        render(AdminNews)
-    },
+    "/admin/news": () =>  render(AdminNews),
     "/admin/news/add": () => render(AddNews),
-    "/admin/news/:id/edit": ({ data }) => {
-        const { id } = data;
-        render(EditNews.print(id));
-    },
+    "/admin/news/:id/edit": ({ data }) => render(EditNews, data.id)
 });
 router.resolve();
