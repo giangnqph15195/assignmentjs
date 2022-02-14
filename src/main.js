@@ -15,7 +15,7 @@ import SignUp from "./page/signup";
 const router = new Navigo("/", {linksSelector: "a"});
 const render = async (content, id) => {
     // document.getElementById("header").innerHTML = MenuList.print();
-    document.getElementById("app").innerHTML = await content(id);
+    document.getElementById("app").innerHTML = await content.print(id);
 }
 router.on({
     "/": () => render(HomePage),
@@ -23,10 +23,10 @@ router.on({
     "/news": () => render(NewsPage),
     "/signin": () => render(SignIn),
     "/signup": () => render(SignUp),
-    "/news/:id": (value) => render(DetailNewsPage, value.id),
+    "/news/:id": ( value ) =>  render(DetailNewsPage, value.data.id),
     "/admin/dashboard": () => render(Dashboard),
-    "/admin/news": () =>  render(AdminNews),
+    "/admin/news": () => render(AdminNews),
     "/admin/news/add": () => render(AddNews),
-    "/admin/news/:id/edit": ({ data }) => render(EditNews, data.id)
+    "/admin/news/:id/edit": ({ data }) => render(EditNews, data.id) ,
 });
 router.resolve();
