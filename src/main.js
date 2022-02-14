@@ -1,6 +1,6 @@
 // import '../style.css'no
 import Navigo from "navigo";
-import MenuList from "./components/menuList";
+// import MenuList from "./components/menuList";
 import AboutPage from "./page/about";
 import AddNews from "./page/admin/addnews";
 import AdminNews from "./page/admin/adminew";
