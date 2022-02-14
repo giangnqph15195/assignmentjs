@@ -1,3 +1,5 @@
+import axios from "axios";
+import { add } from "../../api/posts";
 import NavAdmin from "../../components/navAmin";
 
 const AddNews = {
@@ -39,18 +41,18 @@ const AddNews = {
         <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
             
         <div class="max-w-4xl m-auto my-10">
-        <form class="pl-20">
+        <form id="form-post" class="pl-20">
             <div class="my-5">
                 <label><span class="font-bold">Title</span></label><br>
-                <input class="border-2 border-slate-900 w-96 h-10" type="text" value="">
+                <input id="title" class="border-2 border-slate-900 w-96 h-10" type="text" value="">
             </div>
             <div class="my-5">
                 <label><span class="font-bold">Image:</span></label><br>
-                <input class="" type="file" value="">
+                <input id="img-post" class="" type="file" value="">
             </div>
             <div class="my-5">
                 <label><span class="font-bold">DESC</span></label><br>
-                <input class="border-2 border-slate-900 w-96 h-10" type="text" value="">
+                <input id="desc" class="border-2 border-slate-900 w-96 h-10" type="text" value="">
             </div>
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Save
@@ -74,6 +76,36 @@ const AddNews = {
         
         </div>    
         `
+    },
+    afterPrint(){
+      const formAdd = document.querySelector("#form-post");
+      const imgPost = document.querySelector("#img-post");
+      imgPost.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "mi59v8ju");
+        
+        axios({
+          url: "https://api.cloudinary.com/v1_1/dkrifqhuk/image/upload",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-formendcoded",
+          }, data: formData,
+        }).then((res) => {
+          formAdd.addEventListener("submit", (e) => {
+            e.preventDefault()
+            console.log(formAdd);
+            add({
+              title: document.querySelector("#title").value,
+              img: res.data.secure_url,
+              desc: document.querySelector("#desc").value,
+            })
+          })
+        })
+      })
+
+      
     }
 };
 export default AddNews;

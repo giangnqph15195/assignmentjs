@@ -1,9 +1,10 @@
+import { get, update } from "../../api/posts";
 import NavAdmin from "../../components/navAmin";
 import data from "../../data"
 
 const EditNews = {
-    print(id) {
-        const reuslt = data.find((post) => post.id === id);
+    async print(id) {
+        const { data } = await get(id)
         return /* html */`
 
         <div class="min-h-full">
@@ -43,19 +44,19 @@ const EditNews = {
             
         
         <div class="max-w-4xl m-auto my-10">
-        <form class="pl-20">
+        <form id="form-edit" class="pl-20">
             <div class="my-5">
             <label><span class="font-bold">Title</span></label><br>
-                <input class="border-2 border-slate-900 w-96 h-10" type="text" value="${reuslt.title}">
+                <input id="title" class="border-2 border-slate-900 w-96 h-10" type="text" value="${data.title}">
             </div>
             <div class="my-5">
-                <img class="w-20 h-20" src="${reuslt.img}">
+                <img class="w-20 h-20" src="${data.img}">
                 <label><span class="font-bold">Image</span></label><br>
-                <input class="" type="file" value="">
+                <input id="img-edit" class="" type="file" value="">
             </div>
             <div class="my-5">
             <label><span class="font-bold">Desc</span></label><br>
-                <input class="border-2 border-slate-900 w-96 h-10" type="text" value="${reuslt.desc}">
+                <input id="desc" class="border-2 border-slate-900 w-96 h-10" type="text" value="${data.desc}">
             </div>
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Edit
@@ -63,9 +64,6 @@ const EditNews = {
         </form>
         
         </div> 
-
-
-
 
         </div>
       </div>
@@ -75,6 +73,18 @@ const EditNews = {
 </div>        
         </div>    
         `
+    },
+    afterPrint(id) {
+      const formEdit = document.querySelector("#form-edit")
+      formEdit.addEventListener("submit", (e) => {
+        e.preventDefault()
+        update({
+          id, 
+          title: document.querySelector("#title").value,
+          
+          desc: document.querySelector("#desc").value
+        })
+      })
     }
 };
 export default EditNews;

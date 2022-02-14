@@ -1,8 +1,10 @@
+import { getAll, remove } from "../../api/posts";
 import NavAdmin from "../../components/navAmin";
 import data from "../../data";
 
 const AdminNews = {
-    print() {
+    async print() {
+      const { data } = await getAll()
         return /* html */`
         <div class="min-h-full">
         ${NavAdmin.print()}
@@ -56,6 +58,9 @@ const AdminNews = {
                           <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Edit</span>
                           </th>
+                          <th scope="col" class="relative px-6 py-3">
+                            <span class="sr-only">Remove</span>
+                          </th>
                         </tr>
                       </thead>
                       ${data.map((post) =>/* html */`
@@ -82,6 +87,9 @@ const AdminNews = {
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                           <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button data-id=${post.id} class="btn btn-remove">Remove</button>
                         </td>
                       </tr>
           
@@ -113,6 +121,22 @@ const AdminNews = {
 
         
         `
+    },
+    afterPrint() {
+      const buttons = document.querySelectorAll(".btn");
+      buttons.forEach(button => {
+        const id = button.dataset.id;
+        button.addEventListener('click', (e) => {
+          const confirm = window.confirm("Bạn thực sự muốn xóa");
+          if(confirm){
+            remove(id).then(() =>{
+              console.log("đã xóa");
+              e.preventDefault()
+              
+            })
+          }
+        })
+      })
     }
 };
 export default AdminNews;
