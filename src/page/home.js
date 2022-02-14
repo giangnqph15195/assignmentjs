@@ -4,12 +4,12 @@ import MenuList from "../components/menuList";
 import NewsList from "../components/newsList";
 
 const HomePage = {
-    print() {
+    async  print() {
         return `
         <div class="max-w-5xl m-auto">
             ${MenuList.print()}
             ${Banner.print()}
-            ${NewsList.print()}
+            ${await NewsList.print()}
             ${Footer.print()}
         </div>    
         `

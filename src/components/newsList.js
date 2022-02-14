@@ -1,6 +1,7 @@
 import data from "../data";
 const NewsList = {
-    print() {
+    async print() {
+        const { data } = await getAll();
         return /*html*/`
             <main class="grid gap-4 grid-cols-3 grid-rows-3 gap-x-10 ">
             ${data.map((post) => /* html */ `
