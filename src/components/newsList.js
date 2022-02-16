@@ -4,7 +4,7 @@ const NewsList = {
     async print() {
         const { data } = await getAll()
         return /*html*/`
-            <main class="grid gap-4 grid-cols-3 grid-rows-3 gap-x-10 ">
+            <main class="max-w-6xl m-auto grid gap-4 grid-cols-3 grid-rows-3 gap-x-10 ">
             ${data.map((post) => /* html */ `
                 <div class="news">
                     <div class="iteam">

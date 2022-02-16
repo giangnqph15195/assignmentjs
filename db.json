@@ -21,6 +21,42 @@
       "password": "$2a$10$OTVFVCKZCCFWdzAmh5mxxexYagEPBaw0v8nR06/MLgQi5nIzTvbkK",
       "username": "datlt2306",
       "id": 1
+    },
+    {
+      "email": "anhgiang@gmail.com",
+      "password": "$2a$10$2G4HD27wN1EjnhbFxeqTOe.S/IFyXekHS6/hzc.JMIr9u1bLFoZ2u",
+      "user": "giang69",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "1Ps. PZA",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1644498332/asm/dskylph0frsmjireut1n.jpg",
+      "price": "175.000 VND",
+      "detail": "Mỳ, tôm, cà chua ",
+      "category": "1"
+    },
+    {
+      "id": "2",
+      "name": "2Ps. Pizza",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1644498332/asm/dskylph0frsmjireut1n.jpg",
+      "price": "175.000 VND",
+      "detail": "Pizza",
+      "category": "2"
+    }
+  ],
+  "category":[
+    {
+      "id":"1",
+      "namect": "PIZZA",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645019430/asm/icon_pizza_ucvh3k.png"
+    },
+    {
+      "id": "2",
+      "namect": "Mỳ Ý",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645019441/asm/icon_myi_bx755m.png"
     }
   ]
 }

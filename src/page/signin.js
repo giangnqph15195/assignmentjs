@@ -1,3 +1,5 @@
+import { signin } from "../api/user";
+
 const SignIn = {
     print() {
         return/* html */ `
@@ -16,12 +18,12 @@ const SignIn = {
               </a>
             </p>
           </div>
-          <form class="mt-8 space-y-6" action="#" method="POST">
+          <form id="form-login" class="mt-8 space-y-6" action="#" method="POST">
             <input type="hidden" name="remember" value="true">
             <div class="rounded-md shadow-sm -space-y-px">
               <div>
                 <label for="email-address" class="sr-only">Email address</label>
-                <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+                <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
               </div>
               <div>
                 <label for="password" class="sr-only">Password</label>
@@ -59,6 +61,23 @@ const SignIn = {
         </div>
       </div>
         `
+    },
+
+    afterPrint() {
+      const formlogin = document.querySelector("#form-login");
+      formlogin.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const { data } = await signin({
+          email: document.querySelector("#email").value,
+          password: document.querySelector("#password").value
+        }) ;
+        localStorage.setItem('user', JSON.stringify(data.user))
+        if(data.user.id==2){
+          document.location.href="/admin/news"
+        }else{
+          document.location.href="/"
+        }
+      })
     }
 };
 export default SignIn;

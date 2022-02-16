@@ -2,7 +2,7 @@ const Banner = {
     print() {
         return `
             <div>
-                <img name="slide" src="https://picsum.photos/300/150" class="object-cover w-full h-80 w-full" alt="">  
+                <img name="slide" src="https://res.cloudinary.com/dkrifqhuk/image/upload/v1644559450/asm/banner1_vm7brx.png" alt="">  
             </div>
         `
     }
