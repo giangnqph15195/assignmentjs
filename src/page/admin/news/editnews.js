@@ -1,3 +1,4 @@
+import axios from "axios";
 import { get, update } from "../../../api/posts";
 import NavAdmin from "../../../components/navAmin";
 
@@ -76,15 +77,35 @@ const EditNews = {
     },
     afterPrint(id) {
       const formEdit = document.querySelector("#form-edit")
-      formEdit.addEventListener("submit", (e) => {
-        e.preventDefault()
-        update({
-          id, 
-          title: document.querySelector("#title").value,
-          
-          desc: document.querySelector("#desc").value
+      const imgEdit = document.querySelector("#img-edit")
+      imgEdit.addEventListener('change', (e) => {
+        const file = e.target.files[0]
+        const formData = new FormData()
+
+        formData.append("file", file)
+        formData.append("upload_preset", "mi59v8ju")
+
+        axios({
+          url: "https://api.cloudinary.com/v1_1/dkrifqhuk/image/upload",
+          method: "POST",
+          headers: {
+            "Content-Type" : "application/x-www-formendcoded",
+          },
+          data:formData
+        }).then((res) => {
+          formEdit.addEventListener("submit", (e) => {
+            e.preventDefault()
+            update({
+              id, 
+              title: document.querySelector("#title").value,
+              img: res.data.secure_url,
+              desc: document.querySelector("#desc").value
+            })
+          })
         })
       })
+
+      
     }
 };
 export default EditNews;

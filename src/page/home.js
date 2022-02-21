@@ -18,7 +18,7 @@ const HomePage = {
         `
     },
     afterPrint() {
-        Header.afterPrint()
+        MenuList.afterPrint()
     }
 };
 export default HomePage;

@@ -50,7 +50,7 @@ const MenuList = {
         loguot.addEventListener("click", () => {
             console.log(1)
             localStorage.removeItem('user');
-            reRender(Header,"header")
+            reRender(MenuList,"header")
         })
     }
 }

@@ -10,9 +10,9 @@ const DetailNewsPage = {
         return `
         <div class="max-w-5xl m-auto">
             ${MenuList.print()}
-            <h1>${result.title}</h1>
-            <img src="${result.img}" />
-            <p>${result.desc}</p>
+            <h1>${data.title}</h1>
+            <img src="${data.img}" />
+            <p>${data.desc}</p>
             ${Footer.print()}
         </div>    
         `;

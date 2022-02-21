@@ -11,8 +11,8 @@ import HomePage from "./page/home";
 import NewsPage from "./page/news";
 import SignIn from "./page/signin";
 import SignUp from "./page/signup";
-// import AdminProduct from "./page/admin/product/adPd";
-// import AddPd from "./page/admin/product/addPd";
+import AdminProduct from "./page/admin/product/adPd";
+import AddPd from "./page/admin/product/addPd";
 
 const router = new Navigo("/", {linksSelector: "a"});
 const render = async (content, id) => {
@@ -28,10 +28,10 @@ router.on({
     "/signup": () => render(SignUp),
     "/news/:id": ( value ) =>  render(DetailNewsPage, value.data.id),
     "/admin/dashboard": () => render(Dashboard),
+    "/admin/products" : render(AdminProduct),
     "/admin/news": () => render(AdminNews),
     "/admin/news/add": () => render(AddNews),
-    "/admin/news/:id/edit": ({ data }) => render(EditNews, data.id) ,
-    // "/admin/products" : render(AdminProduct),
-    // "/admin/product/add" : render(AddPd)
+    "/admin/news/:id/edit": ({ data }) => render(EditNews, data.id),
+    "/admin/products/add" : render(AddPd),
 });
 router.resolve();

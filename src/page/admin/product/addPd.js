@@ -42,7 +42,7 @@ const AddPd = {
         <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
             
         <div class="max-w-4xl m-auto my-10">
-        <form id="form-add" class="pl-20">
+        <form id="form-add-pd" class="pl-20">
             <div class="my-5">
                 <label><span class="font-bold">Name Product</span></label><br>
                 <input id="name-pd" class="border-2 border-slate-900 w-96 h-10" type="text" value="">
@@ -83,7 +83,7 @@ const AddPd = {
         `
     },
     afterPrint(){
-      const formAdd = document.querySelector("#form-add");
+      const formAdd = document.querySelector("#form-add-pd");
       const imgPost = document.querySelector("#img-pd");
       imgPost.addEventListener("change", (e) => {
         const file = e.target.files[0];
