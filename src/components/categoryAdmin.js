@@ -7,7 +7,7 @@ const cateAmin = {
         <select id="cate">
         ${data.map((cates) =>`
           <option value="${cates.id}">${cates.namect}</option>
-        `)}
+        `).join("")}
       </select>
         `
     }

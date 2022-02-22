@@ -1,8 +1,6 @@
 import axios from "axios";
-import { all } from "../../../api/category";
 import { get, update } from "../../../api/product";
 import cateAmin from "../../../components/categoryAdmin";
-// import { get, update } from "../../../api/posts";
 import NavAdmin from "../../../components/navAmin";
 
 
@@ -45,10 +43,11 @@ const EditProduct = {
       <div class="px-4 py-6 sm:px-0">
         <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
             
-        ${await cateAmin.print()}
+        
         <div class="max-w-4xl m-auto my-10">
         <form id="form-edit" class="pl-20">
             <div class="my-5">
+            ${await cateAmin.print()} <br>
             <label><span class="font-bold">Name Products</span></label><br>
                 <input id="namePD" class="border-2 border-slate-900 w-96 h-10" type="text" value="${data.name}">
             </div>
@@ -64,7 +63,7 @@ const EditProduct = {
             <label><span class="font-bold">Detail</span></label><br>
                 <input id="detail" class="border-2 border-slate-900 w-96 h-10" type="text" value="${data.detail}">
             </div>
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button type="submit" class="mx-60 mb-8 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Edit
             </button>
         </form>
