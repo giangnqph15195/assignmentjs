@@ -12,9 +12,9 @@ const Cagegory = {
             <div class="flex justify-center">
             ${data.map((cate) => `
                 <div class="mx-8 my-8">
-                    <a href="#">
-                        <img width="70" src="${cate.img}">
-                        <p class="text-center">${cate.namect}</p>
+                    <a href="/category/${cate.id}">
+                        <img width="40" src="${cate.img}">
+                        <p class="text-center font-medium text-orange-400 text-xl">${cate.namect}</p>
                     </a>
                 </div>
             `).join("")}

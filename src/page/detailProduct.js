@@ -11,7 +11,7 @@ const DetailProduct = {
                     <div class="ml-40 mr-20"><img width="600" src="${data.img}"></div>
                     <div>
                         <p class="text-5xl">${data.name}</p>
-                        <p class="my-6">${data.detail}</p>
+                        <p class="my-6">${data.details}</p>
                         <p class="text-2xl text-gray-400 mb-2">Giá sản phẩm</p>
                         <p class="font-bold text-2xl text-orange-600">${data.price}</p>
                         <button class="bg-orange-400 p-2 text-white font-bold my-12">Thêm vào giỏ hàng</button>

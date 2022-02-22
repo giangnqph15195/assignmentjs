@@ -101,7 +101,9 @@ const AddNews = {
               title: document.querySelector("#title").value,
               img: res.data.secure_url,
               desc: document.querySelector("#desc").value,
-            })
+            }).then(
+              document.location.href="/admin/news"
+            )
           })
         })
       })

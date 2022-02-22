@@ -1,10 +1,12 @@
 import axios from "axios";
+import { all } from "../../../api/category";
 import { add } from "../../../api/product";
 import NavAdmin from "../../../components/navAmin";
 
 
 const AddPd = {
-     print() {
+    async print() {
+       const { data } = await all()
         return/*html*/`
         <div class="min-h-full">
         ${NavAdmin.print()}
@@ -28,7 +30,7 @@ const AddPd = {
         <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
         </svg>
-        <a href="/admin/news">Trở Về</a>
+        <a href="/admin/products">Trở Về</a>
       </button>
     </span>
     <!-- Dropdown -->
@@ -43,6 +45,11 @@ const AddPd = {
             
         <div class="max-w-4xl m-auto my-10">
         <form id="form-add-pd" class="pl-20">
+              <select id="cate">
+              ${data.map((cate) =>`
+                <option value="${cate.id}">${cate.namect}</option>
+              `)}
+            </select>
             <div class="my-5">
                 <label><span class="font-bold">Name Product</span></label><br>
                 <input id="name-pd" class="border-2 border-slate-900 w-96 h-10" type="text" value="">
@@ -106,7 +113,10 @@ const AddPd = {
               img: res.data.secure_url,
               price: document.querySelector("#price").value,
               details: document.querySelector("#detail").value,
-            })
+              category: document.querySelector("#cate").value
+            }).then(
+              document.location.href="/admin/products"
+            )
           })
         })
       })

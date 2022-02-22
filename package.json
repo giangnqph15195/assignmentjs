@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
+    "jquery-validation": "^1.19.3",
     "navigo": "^8.11.1"
   }
 }
