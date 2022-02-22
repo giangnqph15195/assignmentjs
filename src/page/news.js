@@ -1,15 +1,17 @@
 import Banner from "../components/banner";
+import Footer from "../components/footer";
 import MenuList from "../components/menuList";
 import NewsList from "../components/newsList"
 
 const NewsPage ={
     async print(){
         return /*html*/`
-        <div class="max-w-5xl m-auto">
+        <div class="">
             ${MenuList.print()}
             ${Banner.print()}
-            <h1>News Pages</h1>
+            <div><h1 class="text-center font-bold text-3xl my-12">Các bài viết tiêu biểu</h1></div>
             ${await NewsList.print()};
+            ${Footer.print()}
         </div>    
         `
     }

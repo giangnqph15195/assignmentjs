@@ -104,8 +104,6 @@ const EditNews = {
           })
         })
       })
-
-      
     }
 };
 export default EditNews;

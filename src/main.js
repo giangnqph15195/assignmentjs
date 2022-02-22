@@ -13,8 +13,9 @@ import SignIn from "./page/signin";
 import SignUp from "./page/signup";
 import AdminProduct from "./page/admin/product/adPd";
 import AddPd from "./page/admin/product/addPd";
+import DetailProduct from "./page/detailProduct";
 
-const router = new Navigo("/", {linksSelector: "a"});
+const router = new Navigo("/", {linksSelector: "a",hash:true});
 const render = async (content, id) => {
     // document.getElementById("header").innerHTML = MenuList.print();
     document.getElementById("app").innerHTML = await content.print(id);
@@ -27,11 +28,14 @@ router.on({
     "/signin": () => render(SignIn),
     "/signup": () => render(SignUp),
     "/news/:id": ( value ) =>  render(DetailNewsPage, value.data.id),
-    "/admin/dashboard": () => render(Dashboard),
-    "/admin/products" : render(AdminProduct),
+    "/product/:id": ( value ) =>  render(DetailProduct, value.data.id),
+    "admin/dashboard": () => render(Dashboard),
     "/admin/news": () => render(AdminNews),
+
     "/admin/news/add": () => render(AddNews),
+
+    // "/admin/product" : render(AdminProduct),
     "/admin/news/:id/edit": ({ data }) => render(EditNews, data.id),
-    "/admin/products/add" : render(AddPd),
+    // "/product/add" : render(AddPd),
 });
 router.resolve();

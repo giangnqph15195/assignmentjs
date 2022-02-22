@@ -2,17 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 .menu_list {
-    @apply px-4 hover:bg-blue-500 text-white py-2 text-sm;
+    @apply px-24 py-8 hover:bg-orange-500 text-white text-lg;
 }
 .news {
-    @apply border-2 border-slate-900 hover:border-orange-500;
-}
-.iteam {
-    @apply p-5;
+    @apply my-12
 }
 .iteam h2 {
-    @apply font-semibold;
+    @apply text-lg font-bold
 }
 .iteam p {
-    @apply text-xs mt-5;
+    
 }
