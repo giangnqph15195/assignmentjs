@@ -1,4 +1,4 @@
-import { all } from "../../../api/category";
+import { all, remove } from "../../../api/category";
 import NavAdmin from "../../../components/navAmin";
 
 
@@ -50,10 +50,10 @@ const AdminCategory = {
                       <thead class="bg-gray-50">
                         <tr>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Title & Image
+                             Image
                           </th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Desc
+                            Name Category
                           </th>
                           <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Edit</span>
@@ -63,17 +63,16 @@ const AdminCategory = {
                           </th>
                         </tr>
                       </thead>
-                      ${data.map((post) =>/* html */`
+                      ${data.map((cate) =>/* html */`
                       <tbody class="bg-white divide-y divide-gray-200">
                       <tr>
                         <td class="px-1 py-4 whitespace-nowrap">
                           <div class="flex items-center">
                             <div class="flex-shrink-0 h-10 w-10">
-                              <img class="h-10 w-10 rounded-full" src="${post.img}" alt="">
+                              <img class="h-10 w-10 rounded-full" src="${cate.img}" alt="">
                             </div>
                             <div class="ml-4">
                               <div class="text-sm font-medium text-gray-900">
-                                ${post.title}
                               </div>
                               <div class="text-sm text-gray-500">
                                 
@@ -82,14 +81,14 @@ const AdminCategory = {
                           </div>
                         </td>
                         <td class="py-4 whitespace-nowrap">
-                          <div class="text-sm text-gray-900">${post.desc}</div>
+                          <div class="text-sm text-gray-900">${cate.namect}</div>
                           <div class="text-sm text-gray-500">Optimization</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                          <a href="/admin/news/${cate.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <button data-id=${post.id} class="btn btn-remove">Remove</button>
+                          <button data-id=${cate.id} class="btn btn-remove">Remove</button>
                         </td>
                       </tr>
           

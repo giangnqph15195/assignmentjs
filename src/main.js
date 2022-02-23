@@ -17,6 +17,7 @@ import DetailProduct from "./page/detailProduct";
 import CatrgoryPage from "./page/categoryPage";
 import EditProduct from "./page/admin/product/editPD";
 import AdminCategory from "./page/admin/category/adCategory";
+import AddCategory from "./page/admin/category/addCategory";
 
 const router = new Navigo("/", {linksSelector: "a",hash:true});
 const render = async (content, id) => {
@@ -42,7 +43,8 @@ router.on({
     "/admin/product/add" : () => render(AddPd),
     "/category/:id": (value) => render(CatrgoryPage, value.data.id),
 
-    "/admin/category": () => render(AdminCategory)
+    "/admin/category": () => render(AdminCategory),
+    "/admin/category/add": () => render(AddCategory)
 
 
 });

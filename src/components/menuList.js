@@ -21,11 +21,12 @@ const MenuList = {
                
 
                 <div class="flex my-2 mx-10">
-                ${localStorage.getItem('user')? `
-                    <ul class="flex mx-3">
-                        <li class="mx-2 hover:text-white"><a href="/signin"></a></li>
-                        <li class="mx-2 hover:text-white"><a href="/signup"></a></li>
+                <ul class="flex mx-3">
+                        <li class="mx-2 hover:text-white"><a href="/signin">SignIn</a></li>
+                        <li class="mx-2 hover:text-white"><a href="/signup">SignUp</a></li>
                     </ul>
+                ${localStorage.getItem('user')? /*html*/`
+                    
                 `
             :""}
                 <ul class="flex mx-3">

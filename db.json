@@ -11,6 +11,12 @@
       "title": "Những Thông Tin Khiến Bạn Bất Ngờ Về Biểu Tượng Ẩm Thực Italy",
       "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645531588/asm/hgwtk9in2jhxqxpqtxmx.jpg",
       "desc": "Trapizzino, một loại sandwich riêng pha trộn với phong cách bánh pizza. Các cẩm nang du lịch coi là một trong những món ăn đường phố nhất thiết du khách phải nếm khi đến Italy."
+    },
+    {
+      "title": "dsadasd",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645592616/asm/ryrjfbma5dup7ckgwg1x.png",
+      "desc": "dasdas",
+      "id": "iMp3KtY"
     }
   ],
   "users": [
@@ -48,7 +54,7 @@
       "name": " P3. SMOKE CHICKEN PIZZA",
       "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645532553/asm/tsta5rh6g8tp4kmlffg3.jpg",
       "price": "150.000 VND",
-      "details": "Thịt gà hun khói, hành tây ,nấm sốt cà chua, pho mai",
+      "detail": "Thịt gà hun khói, hành tây ,nấm sốt cà chua, pho mai",
       "category": "1",
       "id": "o4Fl2Ia"
     },
@@ -56,7 +62,7 @@
       "name": "1",
       "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645536788/asm/j5svsqpr1ewfg8wimgur.jpg",
       "price": "175.000 VND2",
-      "details": "Pizza11",
+      "detail": "Pizza11",
       "category": "1",
       "id": "t9yI5Xs"
     }

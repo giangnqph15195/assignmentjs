@@ -99,6 +99,7 @@ const EditProduct = {
         }).then((res) => {
           formEdit.addEventListener("submit", (e) => {
             e.preventDefault()
+            console.log(formEdit)
             update({
               id, 
               name: document.querySelector("#namePD").value,

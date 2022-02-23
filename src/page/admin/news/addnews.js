@@ -4,7 +4,7 @@ import NavAdmin from "../../../components/navAmin";
 
 
 const AddNews = {
-     print() {
+    print() {
         return/*html*/`
         <div class="min-h-full">
         ${NavAdmin.print()}

@@ -14,7 +14,7 @@ const Cagegory = {
                 <div class="mx-8 my-8">
                     <a href="/category/${cate.id}">
                         <img width="40" src="${cate.img}">
-                        <p class="text-center font-medium text-orange-400 text-xl">${cate.namect}</p>
+                        <p class="text-center font-medium text-orange-400 text-xl my-2">${cate.namect}</p>
                     </a>
                 </div>
             `).join("")}

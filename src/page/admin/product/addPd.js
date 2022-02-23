@@ -112,7 +112,7 @@ const AddPd = {
               name: document.querySelector("#name-pd").value,
               img: res.data.secure_url,
               price: document.querySelector("#price").value,
-              details: document.querySelector("#detail").value,
+              detail: document.querySelector("#detail").value,
               category: document.querySelector("#cate").value
             }).then(
               document.location.href="/admin/products"
