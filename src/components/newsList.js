@@ -1,12 +1,15 @@
+import { getAll } from "../api/posts";
 import data from "../data";
 const NewsList = {
-    print() {
+    async print() {
+        const { data } = await getAll()
         return /*html*/`
-            <main class="grid gap-4 grid-cols-3 grid-rows-3 gap-x-10 ">
+            
+            <main class="max-w-6xl m-auto">
             ${data.map((post) => /* html */ `
                 <div class="news">
                     <div class="iteam">
-                        <a href="/news/${post.id}"><img src="${post.img}" alt=""></a>
+                        <a href="/news/${post.id}"><img class="max-w-5xl" src="${post.img}" alt=""></a>
                 <h2>
                     <a href="/news/${post.id}">${post.title}</a>
                 </h2>

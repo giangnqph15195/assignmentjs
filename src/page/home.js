@@ -1,18 +1,24 @@
 import Banner from "../components/banner";
+import Cagegory from "../components/categoryList";
 import Footer from "../components/footer";
 import MenuList from "../components/menuList";
-import NewsList from "../components/newsList";
+// import NewsList from "../components/newsList";
+import ProductList from "../components/productsList";
 
 const HomePage = {
-    print() {
+    async  print() {
         return `
-        <div class="max-w-5xl m-auto">
+        <div class="">
             ${MenuList.print()}
             ${Banner.print()}
-            ${NewsList.print()}
+            ${await Cagegory.print()}
+            ${await ProductList.print()}
             ${Footer.print()}
         </div>    
         `
     },
+    afterPrint() {
+        MenuList.afterPrint()
+    }
 };
 export default HomePage;

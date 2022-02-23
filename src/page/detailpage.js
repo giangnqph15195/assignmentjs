@@ -1,19 +1,21 @@
-import Banner from "../components/banner";
+import { get } from "../api/posts";
 import Footer from "../components/footer";
 import MenuList from "../components/menuList";
-import data from "../data";
+
 
 const DetailNewsPage = {
-    print(id) {
-        const result = data.find((post) => post.id === id);
+    async print(id) {
+        const { data } = await get(id)
         return `
+        ${MenuList.print()}
         <div class="max-w-5xl m-auto">
-            ${MenuList.print()}
-            <h1>${result.title}</h1>
-            <img src="${result.img}" />
-            <p>${result.desc}</p>
-            ${Footer.print()}
+           
+            <h1 class="text-2xl font-bold my-8">${data.title}</h1>
+            <img class="my-4" src="${data.img}" />
+            <p>${data.desc}</p>
+            
         </div>    
+        ${Footer.print()}
         `;
     },
 };

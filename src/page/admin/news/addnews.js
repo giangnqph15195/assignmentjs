@@ -1,11 +1,11 @@
-import NavAdmin from "../../components/navAmin";
-import data from "../../data"
+import axios from "axios";
+import { add } from "../../../api/posts";
+import NavAdmin from "../../../components/navAmin";
 
-const EditNews = {
-    print(id) {
-        const reuslt = data.find((post) => post.id === id);
-        return /* html */`
 
+const AddNews = {
+    print() {
+        return/*html*/`
         <div class="min-h-full">
         ${NavAdmin.print()}
 
@@ -13,7 +13,7 @@ const EditNews = {
   <div class="max-w-7xl m-auto my-6 lg:flex lg:items-center lg:justify-between">
   <div class="flex-1 min-w-0">
     <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-      Edit News
+      Add News
     </h2>
     <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
       
@@ -41,28 +41,26 @@ const EditNews = {
       <div class="px-4 py-6 sm:px-0">
         <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
             
-        
         <div class="max-w-4xl m-auto my-10">
-        <form class="pl-20">
+        <form id="form-post" class="pl-20">
             <div class="my-5">
-            <label><span class="font-bold">Title</span></label><br>
-                <input class="border-2 border-slate-900 w-96 h-10" type="text" value="${reuslt.title}">
+                <label><span class="font-bold">Title</span></label><br>
+                <input id="title" class="border-2 border-slate-900 w-96 h-10" type="text" value="">
             </div>
             <div class="my-5">
-                <img class="w-20 h-20" src="${reuslt.img}">
-                <label><span class="font-bold">Image</span></label><br>
-                <input class="" type="file" value="">
+                <label><span class="font-bold">Image:</span></label><br>
+                <input id="img-post" class="" type="file" value="">
             </div>
             <div class="my-5">
-            <label><span class="font-bold">Desc</span></label><br>
-                <input class="border-2 border-slate-900 w-96 h-10" type="text" value="${reuslt.desc}">
+                <label><span class="font-bold">DESC</span></label><br>
+                <input id="desc" class="border-2 border-slate-900 w-96 h-10" type="text" value="">
             </div>
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Edit
+              Save
             </button>
         </form>
         
-        </div> 
+
 
 
 
@@ -72,9 +70,45 @@ const EditNews = {
       <!-- /End replace -->
     </div>
   </main>
-</div>        
+</div>
+
+
+
+        
         </div>    
         `
+    },
+    afterPrint(){
+      const formAdd = document.querySelector("#form-post");
+      const imgPost = document.querySelector("#img-post");
+      imgPost.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "mi59v8ju");
+        
+        axios({
+          url: "https://api.cloudinary.com/v1_1/dkrifqhuk/image/upload",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-formendcoded",
+          }, data: formData,
+        }).then((res) => {
+          formAdd.addEventListener("submit", (e) => {
+            e.preventDefault()
+            console.log(formAdd);
+            add({
+              title: document.querySelector("#title").value,
+              img: res.data.secure_url,
+              desc: document.querySelector("#desc").value,
+            }).then(
+              document.location.href="/admin/news"
+            )
+          })
+        })
+      })
+
+      
     }
 };
-export default EditNews;
+export default AddNews;

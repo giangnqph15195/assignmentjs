@@ -1,0 +1,82 @@
+{
+  "posts": [
+    {
+      "id": "16",
+      "title": "Lý Do Khiến Công Việc Của Người Thợ Làm Bánh Pizza Luôn Bền Vững",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645447929/asm/imgblog2_qjfbo9.jpg",
+      "desc": "Hành Trình Ra Đời Của Chiếc Bánh Sandwich Nước Ý được biết 1 đến nhiều với phong cảnh nên thơ và nền văn hoá ẩm thực tuyệt vời. Nhắc tới nước Ý thì không thể không nhắc tới món ăn trứ danh của ÝTận Hưởng Những Chiếc Bánh Pizza Thơm Ngon Với Đặc Trưng Riên Hãy cùng đến Pizza Capichi để trải nghiệm những món mới với những ƯU ĐÃI vô cùng lớn nhé. Chúng tôi luôn mong muốn gửi đến bạn những bữa ăn chất lượng với giá hợp lý nhất.Pizza Capichi với giá hợp lý, phù hợp với mọi lứa tuổi của về giá cả và chất lượng. Với 3 tiêu chí một trong những thương hiệu Pizza Việt Nam. Tiên phong với tiêu chí Pizza Ngon, Giá hợp lý, Phục vụ tại nhà"
+    },
+    {
+      "id": "17",
+      "title": "Những Thông Tin Khiến Bạn Bất Ngờ Về Biểu Tượng Ẩm Thực Italy",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645531588/asm/hgwtk9in2jhxqxpqtxmx.jpg",
+      "desc": "Trapizzino, một loại sandwich riêng pha trộn với phong cách bánh pizza. Các cẩm nang du lịch coi là một trong những món ăn đường phố nhất thiết du khách phải nếm khi đến Italy."
+    },
+    {
+      "title": "dsadasd",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645592616/asm/ryrjfbma5dup7ckgwg1x.png",
+      "desc": "dasdas",
+      "id": "iMp3KtY"
+    }
+  ],
+  "users": [
+    {
+      "email": "keninsta01@gmail.com",
+      "password": "$2a$10$OTVFVCKZCCFWdzAmh5mxxexYagEPBaw0v8nR06/MLgQi5nIzTvbkK",
+      "username": "datlt2306",
+      "id": 1
+    },
+    {
+      "email": "anhgiang@gmail.com",
+      "password": "$2a$10$2G4HD27wN1EjnhbFxeqTOe.S/IFyXekHS6/hzc.JMIr9u1bLFoZ2u",
+      "user": "giang69",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "M6. Spaghetti Shrimp",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1644498332/asm/dskylph0frsmjireut1n.jpg",
+      "price": "175.000 VND",
+      "detail": "Mỳ, tôm, cà chua ",
+      "category": "1"
+    },
+    {
+      "id": "2",
+      "name": "2Ps. Pizza",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1644498332/asm/dskylph0frsmjireut1n.jpg",
+      "price": "175.000 VND",
+      "detail": "Pizza",
+      "category": "2"
+    },
+    {
+      "name": " P3. SMOKE CHICKEN PIZZA",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645532553/asm/tsta5rh6g8tp4kmlffg3.jpg",
+      "price": "150.000 VND",
+      "detail": "Thịt gà hun khói, hành tây ,nấm sốt cà chua, pho mai",
+      "category": "1",
+      "id": "o4Fl2Ia"
+    },
+    {
+      "name": "1",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645536788/asm/j5svsqpr1ewfg8wimgur.jpg",
+      "price": "175.000 VND2",
+      "detail": "Pizza11",
+      "category": "1",
+      "id": "t9yI5Xs"
+    }
+  ],
+  "category": [
+    {
+      "id": "1",
+      "namect": "PIZZA",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645019430/asm/icon_pizza_ucvh3k.png"
+    },
+    {
+      "id": "2",
+      "namect": "Mỳ Ý",
+      "img": "https://res.cloudinary.com/dkrifqhuk/image/upload/v1645019441/asm/icon_myi_bx755m.png"
+    }
+  ]
+}
